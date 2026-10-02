@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pgadmin
+  namespace: axion
+  labels:
+    app: pgadmin
+    
+spec:
+  containers:
+    - name: pgadmin
+      # image: elestio/pgadmin
+      image: docker.io/elestio/pgadmin:latest
+      ports:
+      - containerPort: 8080
+      env:
+      - name: PGADMIN_DEFAULT_EMAIL
+        value: ashuchauhanks@gmail.com
+
+      - name: PGADMIN_DEFAULT_PASSWORD
+        value: admin123
+
+      - name: PGADMIN_LISTEN_PORT
+        value: "8080"
